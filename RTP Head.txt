@@ -1,0 +1,23 @@
+
+struct SPacketHead
+{
+	unsigned char StreamId;     // 
+	unsigned char StreamSubId;	// 0 -- video , 1 -- audio 
+	unsigned char KeyPacket;	// last packet of a frame
+	unsigned char TotalPacket;  // Total packet number in a frame
+	unsigned char PacketNum;	// Packet serial number in a frame
+	unsigned char FrameCheckSum;
+	unsigned char Reserve[2];
+	unsigned int  FrameNum;		// timestamp of a frame
+	unsigned int  FrameLen;     // total length of a frame
+};
+
+
+80 60 15 39 18 B0 4A 7A 95 E6 49 F8
+80 60 15 3A 18 B0 4A 7A 95 E6 49 F8
+80 60 15 3B 18 B0 4A 7A 95 E6 49 F8
+80 E0 15 3C 18 B0 4A 7A 95 E6 49 F8
+80 60 15 3D 18 B0 58 8A 95 E6 49 F8
+80 60 15 3E 18 B0 58 8A 95 E6 49 F8
+80 E0 15 3F 18 B0 58 8A 95 E6 49 F8
+80 60 15 40 18 B0 66 9A 95 E6 49 F8
